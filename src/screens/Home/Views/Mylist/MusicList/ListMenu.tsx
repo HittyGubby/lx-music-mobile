@@ -75,7 +75,7 @@ export default forwardRef<ListMenuType, ListMenuProps>((props, ref) => {
       { action: 'dislike', disabled: hasDislike(musicInfo), label: t('dislike') },
       { action: 'remove', label: t('delete') },
     ]
-    if (musicInfo.source == 'local') menu.splice(5, 0, { action: 'editMetadata', disabled: !edit_metadata, label: t('edit_metadata') })
+    if (musicInfo.source == 'local') menu.splice(5, 0, { action: 'editMetadata', disabled: edit_metadata, label: t('edit_metadata') })
     setMenus(menu)
     void Promise.all([hasEditMetadata(musicInfo)]).then(([_edit_metadata]) => {
       // console.log(_edit_metadata)
